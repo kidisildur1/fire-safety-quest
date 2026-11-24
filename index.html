@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#143c32">
+  <meta name="description" content="Безопасная смена — интерактивный квест по пожарной безопасности для сотрудников научного кластера.">
+  <title>Безопасная смена — учебный квест</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body class="quest-app">
+  <a class="skip-link" href="#screen-area">Перейти к заданию</a>
+  <div id="app-root" class="app-shell">
+    <aside class="sidebar" aria-label="Навигация по квесту">
+      <button class="sidebar-brand" type="button" data-action="home" aria-label="Безопасная смена — на главную">
+        <span class="brand-symbol" aria-hidden="true">
+          <svg viewBox="0 0 40 44" width="34" height="38" fill="none"><path d="M20 2 36 8v13c0 10-8 17-16 21C12 38 4 31 4 21V8L20 2Z" stroke="currentColor" stroke-width="2"/><path d="M21 10c2 7-4 8-4 13 0 2 2 3 3 2 2-1 2-4 3-6 4 3 6 6 4 10-3 6-12 5-14 0-3-6 3-12 8-19Z" fill="currentColor"/></svg>
+        </span>
+        <span class="brand-copy"><strong>Безопасная смена</strong><span>НАУЧНЫЙ КЛАСТЕР</span></span>
+      </button>
+      <div class="sidebar-caption">ВАШ МАРШРУТ</div>
+      <nav id="mission-nav" aria-label="Пять миссий квеста"></nav>
+      <div class="sidebar-progress-wrap">
+        <div class="sidebar-progress-label"><span>Пройдено миссий</span><strong id="sidebar-completed">0 из 5</strong></div>
+        <div class="sidebar-track" aria-hidden="true"><span id="sidebar-progress" style="width:0%"></span></div>
+        <span id="mobile-progress" class="mobile-progress">0 из 5 миссий</span>
+      </div>
+      <div class="sidebar-footer">
+        <span class="sidebar-footer-symbol" aria-hidden="true">+</span>
+        <p>Безопасность начинается<br>с вашего решения.</p>
+        <span>Пять ситуаций из рабочего дня</span>
+      </div>
+    </aside>
+    <div class="workspace">
+      <header class="topbar">
+        <div class="breadcrumb"><span>Обучение</span><span class="breadcrumb-slash" aria-hidden="true">/</span><strong>Пожарная безопасность</strong></div>
+        <div class="topbar-meta"><span id="header-progress" class="header-progress">5 миссий</span><span class="demo-tag"><span aria-hidden="true"></span>Учебная версия</span><button id="home-link" class="home-link" type="button" data-action="home">О квесте <span aria-hidden="true">↗</span></button></div>
+      </header>
+      <main id="screen-area" tabindex="-1">
+        <section class="screen screen-home">
+          <p class="eyebrow">ПРАКТИКА ПОЖАРНОЙ БЕЗОПАСНОСТИ</p>
+          <h1 class="screen-title">Безопасная смена</h1>
+          <p class="screen-lead">Замечайте риски. Выбирайте безопасные действия. Проверяйте себя в рабочих ситуациях.</p>
+          <noscript><p>Для интерактивного прохождения включите JavaScript в браузере.</p></noscript>
+        </section>
+      </main>
+      <footer class="page-footer"><span>По четырём инструкциям по пожарной безопасности</span><span>Учебный квест не заменяет инструктаж и практическую отработку.</span></footer>
+    </div>
+  </div>
+</body>
+</html>

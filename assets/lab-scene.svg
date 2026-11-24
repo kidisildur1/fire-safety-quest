@@ -1,0 +1,230 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 660" role="img" aria-labelledby="scene-title scene-desc">
+  <title id="scene-title">Учебная лаборатория: найдите безопасные и опасные ситуации</title>
+  <desc id="scene-desc">Условная изометрическая лаборатория с рабочим столом, принтером, микроволновой печью, электрической плиткой и чайником. У чайника повреждён шнур, два мощных прибора подключены через один тройник, коробки частично перекрывают дверь выхода. Вентиляционные отверстия принтера открыты, середина прохода свободна, настенная розетка целая. Это учебная иллюстрация, а не план здания.</desc>
+  <defs>
+    <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#edf1e9"/><stop offset="1" stop-color="#e3e9df"/></linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#cce4d7"/><stop offset="1" stop-color="#e7f2e8"/></linearGradient>
+    <linearGradient id="metal" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#c3d1c8"/><stop offset=".5" stop-color="#f7f8f0"/><stop offset="1" stop-color="#a7bdb0"/></linearGradient>
+    <style>
+      .edge{stroke:#5a7468;stroke-width:1.5;stroke-linejoin:round;stroke-linecap:round}
+      .fine{fill:none;stroke:#90a699;stroke-width:1.25;stroke-linejoin:round;stroke-linecap:round}
+      .cord{fill:none;stroke:#355249;stroke-width:4;stroke-linejoin:round;stroke-linecap:round}
+      .shine{fill:none;stroke:#fffdf5;stroke-width:2;stroke-linecap:round;opacity:.8}
+    </style>
+  </defs>
+
+  <!-- Architectural shell: generous, quiet floor and two open cutaway walls. -->
+  <path d="M90 449 446 270 823 445 462 629Z" fill="#173d31" opacity=".07"/>
+  <path d="M95 430 450 260 810 430 450 610Z" fill="url(#floor)" class="edge"/>
+  <path d="M95 430 450 610 450 622 95 442Z" fill="#b8c9bb"/>
+  <path d="M450 610 810 430 810 442 450 622Z" fill="#a3bcae"/>
+  <path d="M95 235 450 65 450 260 95 430Z" fill="#f5f3e9" class="edge"/>
+  <path d="M450 65 810 235 810 430 450 260Z" fill="#e1ebe1" class="edge"/>
+  <path d="M95 235 450 65 810 235" fill="none" stroke="#fffdf7" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M96 418 450 249 809 418" fill="none" stroke="#c0d1c3" stroke-width="8"/>
+  <path d="M450 67V251" stroke="#c7d5c8" stroke-width="2"/>
+  <g stroke="#c7d2c5" stroke-width="1" opacity=".65">
+    <path d="M183 473 538 302M273 520 631 346M360 566 719 388"/>
+    <path d="M187 387 546 562M274 344 636 517M362 302 723 474"/>
+  </g>
+
+  <!-- Glazed laboratory window, set into the left wall. -->
+  <path d="M251 188 399 117 399 228 251 299Z" fill="#bed1c4" class="edge"/>
+  <path d="M258 190 392 126 392 223 258 287Z" fill="url(#glass)" class="edge"/>
+  <path d="M325 158V254" stroke="#f7f8f0" stroke-width="6"/>
+  <path d="M259 237 391 174" stroke="#f7f8f0" stroke-width="5"/>
+  <path d="M268 230 298 185M336 233 380 166" stroke="#fff" stroke-width="10" opacity=".35"/>
+  <path d="M247 300 399 227 410 233 259 306Z" fill="#faf9ef" class="edge"/>
+  <path d="M259 306 410 233 410 240 259 313Z" fill="#abc5b3"/>
+
+  <!-- Small shelf and familiar lab objects on the right wall. -->
+  <path d="M471 171 594 229 614 219 490 162Z" fill="#f7f7ee" class="edge"/>
+  <path d="M471 171 594 229 594 238 471 180Z" fill="#b5cbbd" class="edge"/>
+  <path d="M490 181V199M579 223V241" stroke="#72907e" stroke-width="3"/>
+  <g class="edge">
+    <path d="M486 135 497 140 497 153 508 174Q509 181 499 181L482 173Q474 169 478 162L486 148Z" fill="#e3f4e8"/>
+    <path d="M481 161 500 170 505 179 480 168Z" fill="#94c8a8" stroke="none"/>
+    <path d="M486 135 497 140" stroke="#426f55" stroke-width="4"/>
+    <path d="M520 151 535 158 535 184Q528 190 520 179Z" fill="#f7f6e9"/>
+    <path d="M520 151 527 148 542 155 535 158Z" fill="#c4d4bc"/>
+    <path d="M540 164 555 171 555 194Q548 199 540 188Z" fill="#d9e8bc"/>
+    <path d="M540 164 547 161 562 168 555 171Z" fill="#aacb88"/>
+    <path d="M571 180 580 184 580 195 590 210Q591 216 584 215L568 208Q562 204 566 199L571 192Z" fill="#d8eadd"/>
+  </g>
+
+  <!-- Intact wall socket. Hotspot centre: (182, 321). -->
+  <path d="M163 311 197 295 197 330 163 346Z" fill="#c9d7cc"/>
+  <path d="M162 307 195 291 195 326 162 342Z" fill="#fdfcf3" class="edge"/>
+  <ellipse cx="179" cy="316" rx="9" ry="12" transform="rotate(25 179 316)" fill="#dce7dc" stroke="#97ad9c" stroke-width="1.2"/>
+  <path d="M174 315V319M182 311V315" stroke="#3c5949" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M170 331 188 322" stroke="#e1e9dd" stroke-width="2"/>
+
+  <!-- Exit door; its floor threshold is partly obstructed by deliveries. -->
+  <path d="M654 203 762 254 762 408 654 357Z" fill="#96af9c" class="edge"/>
+  <path d="M662 211 754 255 754 399 662 355Z" fill="#2c6048" class="edge"/>
+  <path d="M669 220 747 257 747 389 669 352Z" fill="#3b7556"/>
+  <path d="M676 235 733 262 733 291 676 264Z" fill="#d6e9d8" stroke="#a6c6ae" stroke-width="2"/>
+  <path d="M680 241 729 264" stroke="#eef7e9" stroke-width="4" opacity=".8"/>
+  <path d="M673 310 743 343 743 352 673 319Z" fill="#dce6d3" class="edge"/>
+  <path d="M665 355 754 398 774 388 685 346Z" fill="#b8cbb8" opacity=".65"/>
+  <path d="M671 181 745 216 745 235 671 200Z" fill="#205e42" class="edge"/>
+  <text x="680" y="197" transform="rotate(26 680 197)" fill="#fffdf3" font-family="Arial,sans-serif" font-size="12" font-weight="700" letter-spacing="1">ВЫХОД</text>
+
+  <!-- Workbench: timber top, painted apron, sturdy legs. -->
+  <path d="M151 444 292 512 551 386 415 326Z" fill="#30553d" opacity=".1"/>
+  <g class="edge">
+    <path d="M154 353 166 359 166 441 154 435Z" fill="#9db3a1"/>
+    <path d="M281 411 294 417 294 499 281 493Z" fill="#839f8d"/>
+    <path d="M514 294 526 288 526 382 514 388Z" fill="#739381"/>
+    <path d="M395 241 405 237 405 321 395 326Z" fill="#9ab29e"/>
+    <path d="M142 344 397 219 540 287 285 412Z" fill="#ddd8b9"/>
+    <path d="M142 344 285 412 285 426 142 358Z" fill="#a1b49b"/>
+    <path d="M285 412 540 287 540 301 285 426Z" fill="#b9c9af"/>
+    <path d="M152 342 397 225 529 287 285 404Z" fill="#f7f4df" stroke="none"/>
+    <path d="M176 373 264 415 264 452 176 410Z" fill="#d9e3d3"/>
+    <path d="M176 391 264 433" fill="none"/>
+    <path d="M209 393 232 404M209 412 232 423" fill="none" stroke="#779180" stroke-width="3"/>
+  </g>
+
+  <!-- Microwave, with a deep window, handle, and distinct control dial. -->
+  <g class="edge">
+    <path d="M179 317 245 285 305 314 239 346Z" fill="#f0f2e6"/>
+    <path d="M179 317 239 346 239 383 179 354Z" fill="#bacdc0"/>
+    <path d="M239 346 305 314 305 351 239 383Z" fill="#f7f8ed"/>
+    <path d="M246 349 288 329 288 353 246 373Z" fill="#234f40"/>
+    <path d="M250 350 282 335 282 348 250 363Z" fill="#476c59" stroke="none"/>
+    <path d="M251 355 280 341" stroke="#a6c1ad" opacity=".4"/>
+    <path d="M285 334V351" stroke="#dce9d8" stroke-width="3"/>
+    <ellipse cx="296" cy="344" rx="3.5" ry="5" transform="rotate(25 296 344)" fill="#859f8b"/>
+    <path d="M296 330V334" stroke="#a7bf8c" stroke-width="3"/>
+    <path d="M190 335 212 346M190 341 212 352M190 347 212 358" stroke="#789687"/>
+  </g>
+
+  <!-- Monitor and notebook create a credible research workstation. -->
+  <g class="edge">
+    <path d="M312 270 366 244 380 251 327 277Z" fill="#7d9985"/>
+    <path d="M331 257V272L346 265V249" fill="#99b19d"/>
+    <path d="M303 219 365 189 369 193 369 246 307 276 303 272Z" fill="#274d3e"/>
+    <path d="M308 222 363 196 363 242 308 268Z" fill="#c7dfd0"/>
+    <path d="M315 246 322 242 328 246 338 230 345 231 356 216" fill="none" stroke="#498867" stroke-width="2.5"/>
+    <path d="M315 255 354 236" stroke="#eff6e8" stroke-width="2"/>
+    <path d="M307 285 348 266 376 279 335 299Z" fill="#d2e0ce"/>
+    <path d="M315 285 346 271M324 290 355 275" stroke="#91aa94"/>
+    <path d="M300 325 334 309 356 319 322 336Z" fill="#fbfbef"/>
+    <path d="M307 326 335 313M314 329 342 316" stroke="#b4c4ad"/>
+  </g>
+
+  <!-- Printer: clear ventilation slots on its exposed left face. Centre (436, 297). -->
+  <g class="edge">
+    <path d="M384 278 440 251 499 279 443 307Z" fill="#eff3e8"/>
+    <path d="M384 278 443 307 443 345 384 316Z" fill="#9fb8a9"/>
+    <path d="M443 307 499 279 499 317 443 345Z" fill="#d9e6d8"/>
+    <path d="M393 275 440 253 486 275 440 297Z" fill="#c1d7c5"/>
+    <path d="M402 275 439 257 477 275 440 293Z" fill="#6c937c"/>
+    <path d="M449 317 490 297 490 307 449 327Z" fill="#315b48"/>
+    <path d="M454 323 482 310 482 326 455 340Z" fill="#fafbf1"/>
+    <path d="M459 325 477 317M459 330 474 323" stroke="#ccd8c4"/>
+    <path d="M394 292 416 303M394 298 416 309M394 304 416 315M394 310 416 321" stroke="#446c57" stroke-width="2"/>
+    <ellipse cx="488" cy="287" rx="3" ry="2" fill="#bddc79" stroke="none"/>
+  </g>
+
+  <!-- Electric hotplate and steel vessel. -->
+  <g class="edge">
+    <path d="M322 363 363 343 408 364 367 385Z" fill="#d6dfcf"/>
+    <path d="M322 363 367 385 367 395 322 373Z" fill="#7e9a87"/>
+    <path d="M367 385 408 364 408 374 367 395Z" fill="#b7cbb8"/>
+    <ellipse cx="366" cy="364" rx="24" ry="11" fill="#314f41"/>
+    <ellipse cx="366" cy="364" rx="16" ry="7" fill="none" stroke="#9fb2a0"/>
+    <path d="M349 344V359Q366 373 383 359V344Z" fill="url(#metal)"/>
+    <ellipse cx="366" cy="344" rx="17" ry="8" fill="#dde9d9"/>
+    <path d="M360 341Q366 336 372 341" fill="none" stroke="#6f8975" stroke-width="4"/>
+    <path d="M347 348 339 344M385 350 393 346" stroke="#496e54" stroke-width="4"/>
+    <circle cx="388" cy="380" r="3" fill="#ee9a5a" stroke="none"/>
+  </g>
+
+  <!-- Chair, set beside the bench rather than across the open passage. -->
+  <path d="M319 495 371 520 413 500 363 476Z" fill="#284f3c" opacity=".1"/>
+  <path d="M355 454V493M355 493 320 510M355 493 390 510M355 493 383 479" class="fine" stroke-width="5"/>
+  <g fill="#456851"><ellipse cx="320" cy="512" rx="6" ry="4"/><ellipse cx="391" cy="511" rx="6" ry="4"/><ellipse cx="384" cy="479" rx="6" ry="4"/></g>
+  <path d="M317 435 352 417 394 437 359 455Z" fill="#89b39c" class="edge"/>
+  <path d="M317 435V443L359 463 394 445V437L359 455Z" fill="#3e7357" class="edge"/>
+  <path d="M318 426V388Q320 379 328 384L364 401Q370 404 370 412V450Z" fill="#477e60" class="edge"/>
+  <path d="M325 391 361 408M325 400 361 417M325 409 361 426" stroke="#78a58a" stroke-width="2"/>
+
+  <!-- Low tea cabinet; a damaged disconnected lead is laid visibly on the floor. -->
+  <path d="M153 467 224 504 291 471 220 439Z" fill="#234c35" opacity=".1"/>
+  <g class="edge">
+    <path d="M155 422 210 395 281 429 226 456Z" fill="#f3eed7"/>
+    <path d="M155 422 226 456 226 493 155 460Z" fill="#c8d9c3"/>
+    <path d="M226 456 281 429 281 466 226 493Z" fill="#9bb99f"/>
+    <path d="M162 434 219 461V482L162 455Z" fill="#dfe8d7"/>
+    <path d="M183 453 201 461" stroke="#708f76" stroke-width="3"/>
+    <ellipse cx="209" cy="430" rx="25" ry="12" fill="#68866e"/>
+    <path d="M191 404Q185 420 193 427Q209 438 225 427Q231 418 223 399Z" fill="url(#metal)"/>
+    <ellipse cx="207" cy="399" rx="16" ry="7" fill="#dce7d7"/>
+    <path d="M202 394Q208 390 214 395" fill="none" stroke="#375c43" stroke-width="4"/>
+    <path d="M224 404Q243 400 240 416Q238 425 228 421" fill="none" stroke="#426c50" stroke-width="5"/>
+    <path d="M191 406 180 397 182 416 192 420Z" fill="#b5cabc"/>
+    <path d="M199 405Q195 416 200 421" class="shine"/>
+  </g>
+  <path d="M212 437Q207 460 220 482Q225 491 237 496" class="cord"/>
+  <path d="M260 501Q279 512 301 494" class="cord"/>
+  <path d="M237 496 245 498M252 500 260 501" fill="none" stroke="#db6a43" stroke-width="4" stroke-linecap="round"/>
+  <path d="M244 496 249 494M244 500 248 504M253 497 251 494M254 501 252 505" fill="none" stroke="#c04c32" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M296 491 306 486 316 491 307 497Z" fill="#45644e" class="edge"/>
+  <path d="M311 489 316 486M315 492 320 489" stroke="#9aab91" stroke-width="2"/>
+
+  <!-- Two appliance leads converge on a single adapter. No warning badge is baked in. -->
+  <path d="M299 352Q318 368 313 388Q308 413 335 427L405 459" class="cord"/>
+  <path d="M403 373Q423 386 421 406Q420 425 433 441L429 455" class="cord"/>
+  <path d="M404 470Q390 487 418 501Q446 516 467 503L482 494" class="cord"/>
+  <path d="M389 466 416 453 451 469 423 483Z" fill="#34523d" opacity=".12"/>
+  <g class="edge">
+    <path d="M393 456 416 445 447 460 424 472Z" fill="#fff9e8"/>
+    <path d="M393 456V466L424 481V472Z" fill="#d3ccb1"/>
+    <path d="M424 472 447 460V470L424 481Z" fill="#e6ddc4"/>
+    <path d="M399 452 408 447 418 452 408 457Z" fill="#e79558"/>
+    <path d="M399 452V460L408 465V457Z" fill="#c37446"/>
+    <path d="M408 457 418 452V459L408 465Z" fill="#df8b54"/>
+    <path d="M419 452 428 448 439 453 430 458Z" fill="#f0a16b"/>
+    <path d="M419 452V460L430 466V458Z" fill="#cc7c4b"/>
+    <path d="M430 458 439 453V461L430 466Z" fill="#e39861"/>
+    <path d="M409 467 416 464 424 468 417 472Z" fill="#e9e1c9"/>
+    <path d="M413 467 413 469M418 465 418 467" stroke="#718b73" stroke-width="1.7"/>
+  </g>
+
+  <!-- Incoming lead runs behind the workstation, avoiding the central clear passage. -->
+  <path d="M482 494Q497 478 477 455L452 443Q444 438 448 427L472 385" class="cord" opacity=".8"/>
+
+  <!-- Boxes interrupt the usable width in front of the exit. -->
+  <path d="M628 399 721 444 779 416 687 371Z" fill="#3f563d" opacity=".15"/>
+  <g class="edge" stroke="#987f53">
+    <path d="M640 366 687 343 739 368 692 392Z" fill="#e6cd98"/>
+    <path d="M640 366 692 392 692 433 640 407Z" fill="#d1ad72"/>
+    <path d="M692 392 739 368 739 409 692 433Z" fill="#be965e"/>
+    <path d="M662 356 715 380 722 376 669 352Z" fill="#f3dfb3" stroke="none"/>
+    <path d="M715 380V420L722 416V376Z" fill="#d6bb85" stroke="none"/>
+    <path d="M651 380 676 392V409L651 397Z" fill="#f3e7cb" stroke="none"/>
+    <path d="M656 386 670 393M656 391 667 396" stroke="#b7a382"/>
+    <path d="M701 347 733 331 767 347 735 364Z" fill="#efdbb4"/>
+    <path d="M701 347 735 364V397L701 380Z" fill="#dbbf89"/>
+    <path d="M735 364 767 347V381L735 397Z" fill="#c6a36e"/>
+    <path d="M715 340 750 357 756 354 721 337Z" fill="#f8ebcf" stroke="none"/>
+    <path d="M750 357V389L756 386V354Z" fill="#e8d6ad" stroke="none"/>
+  </g>
+
+  <!-- Small background details: planted corner and a wall clock. -->
+  <ellipse cx="584" cy="351" rx="25" ry="12" fill="#355b3e" opacity=".09"/>
+  <path d="M567 320 602 320 597 347Q584 356 572 346Z" fill="#dddfc5" class="edge"/>
+  <ellipse cx="584" cy="320" rx="18" ry="8" fill="#839a73" class="edge"/>
+  <path d="M584 322V275M584 305 569 289M584 294 597 277" class="fine" stroke="#557b53" stroke-width="3"/>
+  <path d="M583 295Q556 299 556 278Q577 271 583 295Z" fill="#6e9f70"/>
+  <path d="M585 282Q575 256 591 248Q607 269 585 282Z" fill="#90b98a"/>
+  <path d="M587 301Q587 276 611 278Q614 299 587 301Z" fill="#3f7b53"/>
+  <path d="M581 315Q563 321 551 304Q568 289 581 315Z" fill="#84ac78"/>
+  <ellipse cx="567" cy="153" rx="19" ry="23" transform="rotate(-23 567 153)" fill="#f9f8ec" class="edge"/>
+  <path d="M567 139V154L578 159" fill="none" stroke="#52795a" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="567" cy="154" r="2.5" fill="#52795a"/>
+
+  <!-- An unmarked, unobstructed centre is deliberately left open: hotspot (561, 492). -->
+</svg>
