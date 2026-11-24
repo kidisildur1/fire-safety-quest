@@ -3,51 +3,76 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#143c32">
-  <meta name="description" content="Безопасная смена — интерактивный квест по пожарной безопасности для сотрудников научного кластера.">
-  <title>Безопасная смена — учебный квест</title>
+  <meta name="theme-color" content="#102a22">
+  <meta name="description" content="Безопасная смена — мини-игра о безопасных решениях в научном кластере.">
+  <title>Безопасная смена — мини-игра</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css">
-  <script src="app.js" defer></script>
+  <link rel="stylesheet" href="game.css">
+  <script src="game-art.js?v=2" defer></script>
+  <script src="game.js?v=2" defer></script>
 </head>
-<body class="quest-app">
-  <a class="skip-link" href="#screen-area">Перейти к заданию</a>
-  <div id="app-root" class="app-shell">
-    <aside class="sidebar" aria-label="Навигация по квесту">
-      <button class="sidebar-brand" type="button" data-action="home" aria-label="Безопасная смена — на главную">
-        <span class="brand-symbol" aria-hidden="true">
-          <svg viewBox="0 0 40 44" width="34" height="38" fill="none"><path d="M20 2 36 8v13c0 10-8 17-16 21C12 38 4 31 4 21V8L20 2Z" stroke="currentColor" stroke-width="2"/><path d="M21 10c2 7-4 8-4 13 0 2 2 3 3 2 2-1 2-4 3-6 4 3 6 6 4 10-3 6-12 5-14 0-3-6 3-12 8-19Z" fill="currentColor"/></svg>
+<body class="game-body">
+  <a class="skip-link" href="#game-canvas">Перейти к игровой карте</a>
+  <div class="game-app">
+    <header class="app-header">
+      <div class="game-brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none"><path d="M7 26V9l9-4 9 4v17M4 26h24M12 13h2m4 0h2m-8 5h2m4 0h2m-6 8v-4h4v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </span>
-        <span class="brand-copy"><strong>Безопасная смена</strong><span>НАУЧНЫЙ КЛАСТЕР</span></span>
-      </button>
-      <div class="sidebar-caption">ВАШ МАРШРУТ</div>
-      <nav id="mission-nav" aria-label="Пять миссий квеста"></nav>
-      <div class="sidebar-progress-wrap">
-        <div class="sidebar-progress-label"><span>Пройдено миссий</span><strong id="sidebar-completed">0 из 5</strong></div>
-        <div class="sidebar-track" aria-hidden="true"><span id="sidebar-progress" style="width:0%"></span></div>
-        <span id="mobile-progress" class="mobile-progress">0 из 5 миссий</span>
+        <div class="brand-text"><div class="brand-heading"><h1>Безопасная смена</h1><span class="badge game-kind">мини-игра</span></div><p>НАУЧНЫЙ КЛАСТЕР</p></div>
       </div>
-      <div class="sidebar-footer">
-        <span class="sidebar-footer-symbol" aria-hidden="true">+</span>
-        <p>Безопасность начинается<br>с вашего решения.</p>
-        <span>Пять ситуаций из рабочего дня</span>
-      </div>
-    </aside>
-    <div class="workspace">
-      <header class="topbar">
-        <div class="breadcrumb"><span>Обучение</span><span class="breadcrumb-slash" aria-hidden="true">/</span><strong>Пожарная безопасность</strong></div>
-        <div class="topbar-meta"><span id="header-progress" class="header-progress">5 миссий</span><span class="demo-tag"><span aria-hidden="true"></span>Учебная версия</span><button id="home-link" class="home-link" type="button" data-action="home">О квесте <span aria-hidden="true">↗</span></button></div>
-      </header>
-      <main id="screen-area" tabindex="-1">
-        <section class="screen screen-home">
-          <p class="eyebrow">ПРАКТИКА ПОЖАРНОЙ БЕЗОПАСНОСТИ</p>
-          <h1 class="screen-title">Безопасная смена</h1>
-          <p class="screen-lead">Замечайте риски. Выбирайте безопасные действия. Проверяйте себя в рабочих ситуациях.</p>
-          <noscript><p>Для интерактивного прохождения включите JavaScript в браузере.</p></noscript>
+      <nav class="header-actions" aria-label="Управление игрой">
+        <button id="help-button" class="toolbar-button" type="button" aria-label="Как играть" title="Как играть"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 0 1 5 0c0 2-2.5 2-2.5 4m0 3v.1"/></svg><span class="button-label">Как играть</span></button>
+        <button id="restart-button" class="toolbar-button" type="button" aria-label="Начать заново" title="Начать заново"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 4v6h6M4.5 10a8 8 0 1 1 1 8"/></svg><span class="button-label">Заново</span></button>
+        <button id="sound-button" class="toolbar-button sound-button" type="button" aria-label="Включить звук" aria-pressed="false" title="Включить звук"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m11 5-5 4H3v6h3l5 4V5Zm5 4 5 6m0-6-5 6"/></svg><span class="button-label">Звук</span></button>
+      </nav>
+    </header>
+
+    <main class="game-layout">
+      <section class="game-column" aria-label="Игровое пространство">
+        <div class="mission-hud">
+          <div class="phase-copy"><p class="hud-eyebrow">ВАША СМЕНА</p><h2 id="stage-name">Осмотр корпуса</h2><p id="stage-caption">Исследуйте помещения и замечайте опасные условия.</p></div>
+          <div class="hud-progress"><div class="progress-label"><span>Решения</span><strong id="decision-count">0</strong></div><div id="progress-track" class="progress-track" role="progressbar" aria-label="Прогресс смены" aria-valuemin="0" aria-valuemax="6" aria-valuenow="0"><span id="progress-fill"></span></div><p class="progress-caption">Действуйте в своём темпе</p></div>
+        </div>
+
+        <div class="game-stage">
+          <canvas id="game-canvas" width="960" height="640" tabindex="0" aria-label="Игровая карта научного кластера: 24 на 16 клеток" aria-describedby="controls-help">Игровая карта. Используйте клавиши WASD или стрелки для перемещения и E для взаимодействия с объектами. Описание ближайшего объекта находится в панели справа.</canvas>
+          <div class="map-label" aria-hidden="true"><span class="live-dot"></span>Учебный корпус<span class="map-label-divider"></span>Этаж 1</div>
+          <div id="toast" class="game-toast" role="status" aria-live="polite" aria-atomic="true"></div>
+          <div id="overlay" class="game-overlay" role="dialog" aria-modal="true" aria-label="Начало и результат игры">
+            <div id="overlay-content" class="overlay-card">
+              <p class="overlay-eyebrow">ИНТЕРАКТИВНАЯ ПРАКТИКА</p>
+              <h2 id="welcome-title" class="overlay-title">Смена начинается</h2>
+              <p class="overlay-copy">Вы — сотрудник научного кластера. Пройдите по корпусу, замечайте опасности и выбирайте безопасные действия.</p>
+              <div class="welcome-keys" aria-hidden="true"><span class="keycap">W</span><span class="keycap">A</span><span class="keycap">S</span><span class="keycap">D</span><span class="keys-divider">/</span><span class="keycap">↑</span><span class="keycap">←</span><span class="keycap">↓</span><span class="keycap">→</span><span class="keys-label">движение</span></div>
+              <button id="start-game" class="action-button start-button" type="button">Начать смену<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
+              <p class="welcome-note">Исследуйте. Действуйте. Разбирайте решения.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="controls-bar" id="controls-help">
+          <div class="keyboard-hints"><span class="control-hint"><span class="key-group"><kbd class="keycap">W</kbd><kbd class="keycap">A</kbd><kbd class="keycap">S</kbd><kbd class="keycap">D</kbd></span><span>или стрелки — движение</span></span><span class="control-hint"><kbd class="keycap">E</kbd><span>взаимодействие</span></span></div>
+          <div id="mobile-controls" class="mobile-controls" aria-label="Управление персонажем">
+            <div class="d-pad" aria-label="Перемещение"><button type="button" data-move="up" aria-label="Двигаться вверх"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 15 6-6 6 6"/></svg></button><button type="button" data-move="left" aria-label="Двигаться влево"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg></button><button type="button" data-move="down" aria-label="Двигаться вниз"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><button type="button" data-move="right" aria-label="Двигаться вправо"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></button></div>
+            <button id="interact-button" class="action-button interact-button" type="button"><span class="keycap" aria-hidden="true">E</span><span>Взаимодействовать</span></button>
+          </div>
+        </div>
+      </section>
+
+      <aside class="journal-panel" aria-label="Журнал смены и взаимодействие">
+        <section class="journal-section">
+          <div class="panel-heading"><p class="panel-eyebrow">ДЕРЖИТЕ В ПОЛЕ ЗРЕНИЯ</p><h2>Журнал смены</h2></div>
+          <ol id="objectives" class="objectives"><li class="objective active"><span class="objective-title">Осмотрите пространство</span><span class="objective-description">Начните смену и изучите корпус.</span></li><li class="objective locked"><span class="objective-title">Проверьте свои решения</span><span class="objective-description">Задания появятся по ходу игры.</span></li><li class="objective locked"><span class="objective-title">Завершите смену</span><span class="objective-description">Посмотрите, что удалось отработать.</span></li></ol>
         </section>
-      </main>
-      <footer class="page-footer"><span>По четырём инструкциям по пожарной безопасности</span><span>Учебный квест не заменяет инструктаж и практическую отработку.</span></footer>
-    </div>
+        <section class="context-panel" aria-labelledby="context-title"><div class="context-heading"><span class="context-dot" aria-hidden="true"></span><span class="panel-eyebrow">РЯДОМ С ВАМИ</span></div><h2 id="context-title">Исследуйте корпус</h2><p id="context-description">Подойдите к предмету или персонажу. Здесь появятся описание и доступные действия.</p><div id="context-actions" class="context-actions"></div></section>
+        <div class="status-panel"><span class="status-dot" aria-hidden="true"></span><p id="status-text" role="status" aria-live="polite" aria-atomic="true">Готовы начать смену.</p></div>
+      </aside>
+    </main>
+
+    <footer class="game-footer"><span>Учебная модель помещений научного кластера</span><span>Практика в игре дополняет инструктаж и отработку действий на объекте.</span></footer>
   </div>
+
+  <div id="dialog" class="story-dialog" hidden role="dialog" aria-modal="true" aria-labelledby="dialog-title"><div class="dialog-card"><p class="overlay-eyebrow">БЕЗОПАСНАЯ СМЕНА</p><h2 id="dialog-title">Ситуация</h2><div id="dialog-content" class="dialog-content"></div><div id="dialog-actions" class="dialog-actions"></div></div></div>
 </body>
 </html>
